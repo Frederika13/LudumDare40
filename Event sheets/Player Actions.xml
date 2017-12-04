@@ -84,5 +84,52 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="283879082656270">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="249858897814544" type="System">
+                    <param id="0" name="Variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="115432337177726" type="System" />
+                <action id="-26" name="Restart layout" sid="823324523910398" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="716697128134637">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="393880748350983" type="PlayerWalk">
+                    <param id="0" name="Object">Goal</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="578995070245703" type="WinText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="731185139913092" type="Spider" />
+                <action id="-9" name="Set value" sid="235096063863856" type="System">
+                    <param id="0" name="Variable">Collected</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="159458589885464" type="RestartGame">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="871485932101164" type="RestartGame">
+                    <param id="0" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="718466953985962">
+            <conditions>
+                <condition id="0" name="On clicked" sid="567564398403802" type="RestartGame" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="957292186305302" type="System" />
+                <action id="-2" name="Go to layout" sid="309337096876795" type="System">
+                    <param id="0" name="Layout">Opening Layout</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
