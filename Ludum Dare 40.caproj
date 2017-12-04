@@ -432,6 +432,11 @@
                             <point x="1" y="0.539683" />
                             <point x="0.716724" y="0.710318" />
                             <point x="0.706484" y="0.527778" />
+						</collision-poly>
+					</frame>
+                </animation>
+            </animation-folder>
+		</object-type>
         <object-type name="PlayerWalk" sid="523790597717394">
             <plugin id="Sprite" />
             <behaviors>
@@ -682,8 +687,10 @@
                             <point x="0.95" y="0.6" />
                             <point x="0.5" y="0.533333" />
                             <point x="0.0333333" y="0.733333" />
-        <object-type name="Keyboard" sid="773074481653611">
-            <plugin id="Keyboard" />
+							 </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
         <object-type name="Spider" sid="443336382834034">
             <plugin id="Sprite" />
@@ -740,22 +747,17 @@
     <families />
     <layout-folder>
         <layout>Weapons Layout.xml</layout>
+		<layout>Level 1 Layout.xml</layout>
+        <layout>Test Layout.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Weapons Event Sheet.xml</event-sheet>
+		<event-sheet>Player Actions.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="3" />
         <global-instance type="Keyboard" uid="12" />
-        <layout>Level 1 Layout.xml</layout>
-        <layout>Test Layout.xml</layout>
-    </layout-folder>
-    <event-folder>
-        <event-sheet>Player Actions.xml</event-sheet>
-    </event-folder>
-    <global-instances>
-        <global-instance type="Keyboard" uid="8" />
-    </global-instances>
+	</global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>
