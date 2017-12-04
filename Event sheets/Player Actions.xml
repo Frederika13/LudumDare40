@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Player Actions</name>
     <events>
+        <include>Weapons Event Sheet</include>
+        <include>Enemy Actions</include>
         <event-block sid="426869317913489">
             <conditions>
                 <condition id="0" name="On key pressed" sid="491920720644265" type="Keyboard">
