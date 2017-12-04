@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>Ludum Dare 40</name>
     <description></description>
@@ -19,12 +19,13 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
-        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
-        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -432,11 +433,11 @@
                             <point x="1" y="0.539683" />
                             <point x="0.716724" y="0.710318" />
                             <point x="0.706484" y="0.527778" />
-						</collision-poly>
-					</frame>
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
-		</object-type>
+        </object-type>
         <object-type name="PlayerWalk" sid="523790597717394">
             <plugin id="Sprite" />
             <behaviors>
@@ -446,15 +447,18 @@
                 <behavior-type name="ScrollTo" sid="878546488892224">
                     <behavior id="scrollto" />
                 </behavior-type>
+                <behavior-type name="BoundToLayout" sid="524135091388191">
+                    <behavior id="bound" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="623096074065536" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ryanm\Downloads\PlatformCharacters\PNG\Player\Poses\player_idle.png">
                         <collision-poly>
-                            <point x="0.1875" y="0.172727" />
-                            <point x="0.875" y="0.163636" />
+                            <point x="0.2125" y="0.218182" />
+                            <point x="0.85" y="0.227272" />
                             <point x="0.8375" y="1" />
-                            <point x="0.15" y="1" />
+                            <point x="0.2125" y="1" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -687,19 +691,25 @@
                             <point x="0.95" y="0.6" />
                             <point x="0.5" y="0.533333" />
                             <point x="0.0333333" y="0.733333" />
-							 </collision-poly>
+                        </collision-poly>
                     </frame>
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="Spider" sid="443336382834034">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Health" sid="684019886036059" type="number" />
+            </instance-variables>
             <behaviors>
-                <behavior-type name="Wrap" sid="838531856878591">
-                    <behavior id="wrap" />
+                <behavior-type name="LineOfSight" sid="428907596184778">
+                    <behavior id="LOS" />
                 </behavior-type>
-                <behavior-type name="Platform" sid="359134295919530">
+                <behavior-type name="Platform" sid="182186042251575">
                     <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="644599212178678">
+                    <behavior id="bound" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -747,17 +757,18 @@
     <families />
     <layout-folder>
         <layout>Weapons Layout.xml</layout>
-		<layout>Level 1 Layout.xml</layout>
+        <layout>Level 1 Layout.xml</layout>
         <layout>Test Layout.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Weapons Event Sheet.xml</event-sheet>
-		<event-sheet>Player Actions.xml</event-sheet>
+        <event-sheet>Player Actions.xml</event-sheet>
+        <event-sheet>Enemy Actions.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Mouse" uid="3" />
-        <global-instance type="Keyboard" uid="12" />
-	</global-instances>
+        <global-instance type="Mouse" uid="22" />
+        <global-instance type="Keyboard" uid="23" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>

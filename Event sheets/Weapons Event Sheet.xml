@@ -7,7 +7,7 @@
         <variable constant="0" name="CurrentItem" sid="874767608659876" static="0" type="text">Handgun</variable>
         <variable constant="0" name="Collected" sid="520668833089039" static="0" type="number">5</variable>
         <variable constant="0" name="ChangeTime" sid="141937814460704" static="0" type="number">10</variable>
-        <variable constant="0" name="broke" sid="379263894672187" static="0" type="number">1</variable>
+        <variable constant="0" name="broke" sid="379263894672187" static="0" type="number">0</variable>
         <variable constant="0" name="Weapon_Select" sid="910938683176283" static="0" type="number">0</variable>
         <event-block sid="289318848677556">
             <conditions>
@@ -134,7 +134,7 @@
             </conditions>
             <actions>
                 <action behavior="Pin" id="0" name="Pin to object" sid="786993793231494" type="Weapon">
-                    <param id="0" name="Pin to">playerStandIn</param>
+                    <param id="0" name="Pin to">PlayerWalk</param>
                     <param id="1" name="Mode">0</param>
                 </action>
             </actions>
@@ -309,6 +309,47 @@
                 <action id="-9" name="Set value" sid="179120294729829" type="System">
                     <param id="0" name="Variable">Weapon_Select</param>
                     <param id="1" name="Value">4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="685403032127901">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="388271535968628" type="Bullet">
+                    <param id="0" name="Object">Spider</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="202412094332967" type="Spider">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="-9" name="Destroy" sid="419423979260292" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="335364615879040">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="797027931900714" type="Arrow">
+                    <param id="0" name="Object">Spider</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="893044001838501" type="Spider">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Destroy" sid="676118070434833" type="Arrow" />
+            </actions>
+        </event-block>
+        <event-block sid="722756162444211">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="478454733169129" type="Weapon">
+                    <param id="0" name="Object">Spider</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="476988925783451" type="Spider">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">10</param>
                 </action>
             </actions>
         </event-block>
